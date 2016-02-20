@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Offices{% endblock %}
+
+{% block content %}
+<h1>Offices</h1>
+
+<div>
+{% for office in office_list %}
+    <div>
+        <a href="/offices/{{ office.id }}/">{{ office.name }}</a>
+    </div>
+{% empty %}
+    No offices added.
+{% endfor %}
+</div>
+{% endblock %}
