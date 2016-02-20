@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 
-{% block title %}Contact - {{office}}{% endblock %}
+{% block title %}Contact - {{contact.full_name}}{% endblock %}
 
 {% block content %}
 <h1>{{contact}}</h1>
 
 <div>
-    <div>
-        <div>Client:</div>
-        <div>
+    <div class="row">
+        <div class="col-md-4 text-right">Client:</div>
+        <div class="col-md-8">
             <a href="/clients/{{ contact.client.id }}/">{{ contact.client }}</a>
         </div>
     </div>
-    <div>
-        <div>Name:</div>
-        <div>{{ contact.full_name }}</div>
+    <div class="row">
+        <div class="col-md-4 text-right">Name:</div>
+        <div class="col-md-8">{{ contact.full_name }}</div>
     </div>
-    <div>
-        <div>Email:</div>
-        <div>{{ contact.email|default:"<i>No Email Provided</i>" }}</div>
+    <div class="row">
+        <div class="col-md-4 text-right">Email:</div>
+        <div class="col-md-8">{{ contact.email|default:"<i>No Email Provided</i>" }}</div>
     </div>
 </div>
 {% endblock %}

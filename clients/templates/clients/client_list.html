@@ -7,11 +7,13 @@
 
 <div>
 {% for client in client_list %}
-    <div>
-        <a href="/clients/{{ client.id }}/">{{ client}}</a>
-    </div>
-    <div>
-        {{ client.contact_set.count }} Contacts
+    <div class="row">
+        <div class="col-md-8">
+            <a href="/clients/{{ client.id }}/">{{ client}}</a>
+        </div>
+        <div class="col-md-4">
+            {{ client.contact_set.count }} Contacts
+        </div>
     </div>
 {% empty %}
     No clients added.

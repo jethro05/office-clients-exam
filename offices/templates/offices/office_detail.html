@@ -8,8 +8,8 @@
 <h2>Clients List</h2>
 <div>
 {% for client in office.client_set.all %}
-    <div>
-        <a href="/clients/{{ client.id }}/">{{ client.name }}</a>
+    <div class="row">
+        <a class="col-md-12" href="/clients/{{ client.id }}/">{{ client.name }}</a>
     </div>
 {% empty %}
     No clients in {{office}}.

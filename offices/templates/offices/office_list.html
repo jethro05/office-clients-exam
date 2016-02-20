@@ -7,8 +7,8 @@
 
 <div>
 {% for office in office_list %}
-    <div>
-        <a href="/offices/{{ office.id }}/">{{ office.name }}</a>
+    <div class="row">
+        <a class="col-md-12" href="/offices/{{ office.id }}/">{{ office.name }}</a>
     </div>
 {% empty %}
     No offices added.
