@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - {{office}}{% endblock %}
+
+{% block content %}
+<h1>{{contact}}</h1>
+
+<div>
+    <div>
+        <div>Client:</div>
+        <div>
+            <a href="/clients/{{ contact.client.id }}/">{{ contact.client }}</a>
+        </div>
+    </div>
+    <div>
+        <div>Name:</div>
+        <div>{{ contact.full_name }}</div>
+    </div>
+    <div>
+        <div>Email:</div>
+        <div>{{ contact.email|default:"<i>No Email Provided</i>" }}</div>
+    </div>
+</div>
+{% endblock %}

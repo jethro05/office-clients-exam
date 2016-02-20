@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Clients{% endblock %}
+
+{% block content %}
+<h1>Clients</h1>
+
+<div>
+{% for client in client_list %}
+    <div>
+        <a href="/clients/{{ client.id }}/">{{ client}}</a>
+    </div>
+    <div>
+        {{ client.contact_set.count }} Contacts
+    </div>
+{% empty %}
+    No clients added.
+{% endfor %}
+</div>
+{% endblock %}
+
