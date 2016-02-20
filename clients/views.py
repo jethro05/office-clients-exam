@@ -7,6 +7,8 @@ from clients.models import Client, Contact
 class ClientListView(ListView):
     model = Client
 
+    paginate_by = 20
+
     def get_context_data(self, **kwargs):
          context = super(ClientListView, self).get_context_data(**kwargs)
          return context
