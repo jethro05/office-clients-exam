@@ -11,4 +11,9 @@ class OfficeListView(ListView):
         context = super(OfficeListView, self).get_context_data(**kwargs)
         return context
 
-# Create your views here.
+class OfficeDetailView(DetailView):
+    model = Office
+
+    def get_context_data(self, **kwargs):
+        context = super(OfficeDetailView, self).get_context_data(**kwargs)
+        return context

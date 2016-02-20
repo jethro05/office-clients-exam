@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Office - {{office}}{% endblock %}
+
+{% block content %}
+<h1>{{office}}</h1>
+
+<h2>Clients List</h2>
+<div>
+{% for client in office.client_set.all %}
+    <div>
+        <a href="/clients/{{ client.id }}/">{{ client.name }}</a>
+    </div>
+{% empty %}
+    No clients in {{office}}.
+{% endfor %}
+</div>
+{% endblock %}
